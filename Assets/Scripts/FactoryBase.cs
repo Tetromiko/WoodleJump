@@ -1,22 +1,20 @@
 using System;
-using System.Threading.Tasks;
 using UnityEngine;
-using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
 
 public abstract class FactoryBase : IService, IDisposable
 {
-    protected readonly AssetProvider AssetProvider;
-    protected readonly ObjectDataBase ObjectDataBase;
+    protected readonly ProbabilityObjectDataBase ObjectDataBase;
     
-    protected FactoryBase(AssetProvider assetProvider, ObjectDataBase objectDataBase)
+    protected FactoryBase(ProbabilityObjectDataBase objectDataBase)
     {
-        AssetProvider = assetProvider;
         ObjectDataBase = objectDataBase;
-        
     }
 
+    public abstract GameObject Create(string key);
+    
     public abstract GameObject Create(string key, Vector2 position);
+    
+    public abstract GameObject Create(string key, Vector2 position, Transform parent);
 
     public abstract void Dispose();
 }

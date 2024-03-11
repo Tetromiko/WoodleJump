@@ -15,7 +15,7 @@ public class AssetProvider : IService
         {
             return (T)loaded;
         }
-
+        
         var operationHandle = Addressables.LoadAssetAsync<T>(address);
         await operationHandle.Task;
         
@@ -25,17 +25,13 @@ public class AssetProvider : IService
             _loadedAssets[address] = result;
             return result;
         }
-        else
-        {
-            Debug.LogError($"Failed to load asset at address: {address}");
-            throw new NullReferenceException($"Failed to load asset at address: {address}");
-        }
+        Debug.LogError($"Failed to load asset at address: {address}");
+        throw new NullReferenceException($"Failed to load asset at address: {address}");
     }
     
     public async Task<IList<T>> LoadLabeledAssetsAsync<T>(AssetLabelReference label)
     {
         var locations = await Addressables.LoadResourceLocationsAsync(label).Task;
-
         var loadedAssets = new List<T>();
         
         foreach (var location in locations)

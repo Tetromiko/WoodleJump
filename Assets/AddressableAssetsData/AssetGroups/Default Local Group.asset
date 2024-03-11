@@ -17,18 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: eb84dd665a6e5204a8e48e8a24df2a19
   m_SerializeEntries:
-  - m_GUID: 45e4dcb124fe12a45b3a9b8b09209a9b
-    m_Address: ItemBase
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d5e7c477eabef084c99befefbf1d7aee
-    m_Address: PlatformBase
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - platform
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6e85947cb4407e243bb65d632e09921f
     m_Address: BootstrapScene
     m_ReadOnly: 0
@@ -40,24 +28,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - scene
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2ad5b465060a09c4dab7ba4c423ce160
-    m_Address: ItemDataBase
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - database
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 42f58f69e906f0649aa63119c9325cd0
-    m_Address: PlatformDataBase
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - database
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d32f7774f789e514f92007a1be952b2b
-    m_Address: SceneDataBase
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - database
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5de1a8a8b893c6c4083626e093f7b3aa, type: 2}

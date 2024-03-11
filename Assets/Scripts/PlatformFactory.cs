@@ -1,20 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Object = UnityEngine.Object;
 
 public class PlatformFactory : FactoryBase
 {
-    private readonly Dictionary<string, GameObject> _loadedPlatformPrefabs = new();
-
-    public PlatformFactory(AssetProvider assetProvider, ObjectDataBase objectDataBase) : base(assetProvider, objectDataBase)
+    public PlatformFactory(ProbabilityObjectDataBase objectDataBase) : base(objectDataBase)
     {
+        
     }
-    
+
+    public override GameObject Create(string key)
+    {
+        return Create(key, Vector2.zero);
+    }
+
     public override GameObject Create(string key, Vector2 position)
     {
-        var platformPrefab = ObjectDataBase.GetObject(key);
-        var platform = Object.Instantiate((GameObject)platformPrefab, position, Quaternion.identity);
+        return Create(key, position, null);
+    }
+
+    public override GameObject Create(string key, Vector2 position, Transform parent)
+    {
+        var platformPrefab = (GameObject)ObjectDataBase.GetObject();
+        var platform = Object.Instantiate(platformPrefab, parent);
+        platform.transform.localPosition = position;
         return platform;
     }
 

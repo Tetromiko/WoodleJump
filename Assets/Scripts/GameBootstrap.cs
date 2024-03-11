@@ -11,6 +11,8 @@ public class GameBootstrap : Bootstrap
         ServiceLocator.Register(assetProvider);
         
         LoadStartScene();
+        
+        await Task.CompletedTask;
     }
     
     private void LoadStartScene()

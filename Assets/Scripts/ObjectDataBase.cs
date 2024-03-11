@@ -2,22 +2,20 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 
 [CreateAssetMenu(fileName = "ObjectDataBase", menuName = "DataBases/ObjectDataBase", order = 1)]
-public class ObjectDataBase: ScriptableObject
+public class ObjectDataBase : ScriptableObject
 {
+    [SerializeField] protected AssetLabelReference label;
+    
     private readonly Dictionary<string, Object> _objects = new();
+    protected AssetProvider AssetProvider;
 
-    private AssetProvider _assetProvider;
-    [SerializeField] private AssetLabelReference label;
-
-    public async Task Initialize(AssetProvider assetProvider)
+    public virtual async Task Initialize(AssetProvider assetProvider)
     {
-        _assetProvider = assetProvider;
-        var loadedAssets = await _assetProvider.LoadLabeledAssetsAsync<object>(label);
-        
-        Debug.Log($"{loadedAssets.Count}");
+        AssetProvider = assetProvider;
+        var loadedAssets = await AssetProvider.LoadLabeledAssetsAsync<object>(label);
         
         foreach (var loadedAsset in loadedAssets)
         {
@@ -28,7 +26,6 @@ public class ObjectDataBase: ScriptableObject
 
     public Object GetObject(string key)
     {
-        Debug.Log($"{_objects.GetValueOrDefault(key).GetType()}");
         return _objects.GetValueOrDefault(key);
     }
 }

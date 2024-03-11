@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Items
+  m_EditorClassIdentifier: 
+  m_GroupName: Items
+  m_Data:
+    m_SerializedData: []
+  m_GUID: db95c5a5758099a449cf64a66b460893
+  m_SerializeEntries:
+  - m_GUID: 5857bdcfecaf4fa4cbcbaabe41a5d6a9
+    m_Address: JumpingBoots
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6035ec6cff7a81442b7d1e68b9451420
+    m_Address: PerplexityPotion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9722ef8ac588d3142b0acfc4f21de18a
+    m_Address: LimitedVisibilityPotion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 264a7e52284c9a44a98c42ed0308d1ab
+    m_Address: IronBoots
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1507a93de2d611342a0c1691d3575fed
+    m_Address: Wings
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - item
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 5de1a8a8b893c6c4083626e093f7b3aa, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9b3c2fcdfbdaeb643b99f2cd37f9e153, type: 2}
+    - {fileID: 11400000, guid: 8c4d3ae29da09b3498efb8a8e06eb5fc, type: 2}
