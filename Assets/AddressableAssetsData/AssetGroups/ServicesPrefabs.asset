@@ -10,33 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: ServicesPrefabs
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: ServicesPrefabs
   m_Data:
     m_SerializedData: []
-  m_GUID: eb84dd665a6e5204a8e48e8a24df2a19
+  m_GUID: f35def67de241fd4aa94b11c68b845d1
   m_SerializeEntries:
-  - m_GUID: 6e85947cb4407e243bb65d632e09921f
-    m_Address: BootstrapScene
+  - m_GUID: a6e385e6b79d8634caba7e85a38b4f3a
+    m_Address: WorldBuilder
     m_ReadOnly: 0
     m_SerializedLabels:
-    - scene
+    - service
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: dced5584f0f7c2843863850a67c9b729
-    m_Address: GameplayScene
+  - m_GUID: ca9d86a9d0a508641a64db07d589d133
+    m_Address: WorldManager
     m_ReadOnly: 0
     m_SerializedLabels:
-    - scene
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4a220a42c3a181e4cb63028c59623611
-    m_Address: Player
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+    - service
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5de1a8a8b893c6c4083626e093f7b3aa, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: fa2f8fd56ac90494cadc526ee4b5c6be, type: 2}
-    - {fileID: 11400000, guid: 947ac87cc73186a4fb255ce997c431f0, type: 2}
+    - {fileID: 11400000, guid: 936d74b1cacb4c24bb5bb561327548f6, type: 2}
+    - {fileID: 11400000, guid: cc975c86934264f41803d23710f74963, type: 2}

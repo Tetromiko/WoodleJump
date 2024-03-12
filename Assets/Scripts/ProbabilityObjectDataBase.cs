@@ -15,8 +15,6 @@ public class ProbabilityObjectDataBase : ScriptableObject
     {
         _assetProvider = assetProvider;
         var loadedAssets = await _assetProvider.LoadLabeledAssetsAsync<object>(label);
-        
-        Debug.Log(loadedAssets.Count + " " + probabilityObjects.Count);
 
         if (loadedAssets.Count != probabilityObjects.Count)
         {
@@ -31,8 +29,6 @@ public class ProbabilityObjectDataBase : ScriptableObject
     
     public Object GetObject()
     {
-        var obj = probabilityObjects.Get();
-        Debug.Log(obj);
-        return obj;
+        return probabilityObjects.Get();;
     }
 }

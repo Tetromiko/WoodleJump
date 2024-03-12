@@ -1,9 +1,10 @@
+using System;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameplayBootstrap : Bootstrap
 {
-    public WorldBuilder worldBuilder;
     protected override async Task Initialize()
     {
         var assetProvider = ServiceLocator.Get<AssetProvider>();
@@ -20,13 +21,17 @@ public class GameplayBootstrap : Bootstrap
         var platformFactory = new PlatformFactory(platformDataBase);
         ServiceLocator.Register(platformFactory);
         
-        worldBuilder.Initialize(assetProvider, platformFactory, itemFactory);
+        var playerPrefab = await assetProvider.LoadAssetAsync<GameObject>("Player");
+        var player = Instantiate(playerPrefab).GetComponent<Player>();
+        
+        var worldBuilderPrefab = await assetProvider.LoadAssetAsync<GameObject>("WorldBuilder");
+        var worldBuilder = Instantiate(worldBuilderPrefab).GetComponent<WorldBuilder>();
+        worldBuilder.Initialize(platformFactory, itemFactory);
         ServiceLocator.Register(worldBuilder);
-
-        for (int i = 0; i < 20; i++)
-        {
-            worldBuilder.Create(new Vector2(0, i*3));
-        }
+        
+        var worldManagerPrefab = await assetProvider.LoadAssetAsync<GameObject>("WorldManager");
+        var worldManager = Instantiate(worldManagerPrefab).GetComponent<WorldManager>();
+        worldManager.Initialize(player, worldBuilder);
+        ServiceLocator.Register(worldManager);
     }
-    
 }
