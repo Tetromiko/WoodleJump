@@ -8,17 +8,17 @@ public class PlatformFactory : FactoryBase
         
     }
 
-    public override GameObject Create(string key)
+    public override GameObject Create()
     {
-        return Create(key, Vector2.zero);
+        return Create(Vector2.zero);
     }
 
-    public override GameObject Create(string key, Vector2 position)
+    public override GameObject Create(Vector2 position)
     {
-        return Create(key, position, null);
+        return Create(position, null);
     }
 
-    public override GameObject Create(string key, Vector2 position, Transform parent)
+    public override GameObject Create(Vector2 position, Transform parent)
     {
         var platformPrefab = (GameObject)ObjectDataBase.GetObject();
         var platform = Object.Instantiate(platformPrefab, parent);

@@ -5,8 +5,11 @@ using UnityEngine.Serialization;
 
 public class GameplayBootstrap : Bootstrap
 {
+    [SerializeField] private UIManager uiManager;
     protected override async Task Initialize()
     {
+        uiManager.ShowLoadingScreen();
+        
         var assetProvider = ServiceLocator.Get<AssetProvider>();
         
         var itemDataBase = await assetProvider.LoadAssetAsync<ProbabilityObjectDataBase>("ItemDataBase");
@@ -33,5 +36,7 @@ public class GameplayBootstrap : Bootstrap
         var worldManager = Instantiate(worldManagerPrefab).GetComponent<WorldManager>();
         worldManager.Initialize(player, worldBuilder);
         ServiceLocator.Register(worldManager);
+        
+        uiManager.HideLoadingScreen();
     }
 }

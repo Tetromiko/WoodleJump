@@ -10,11 +10,11 @@ public abstract class FactoryBase : IService, IDisposable
         ObjectDataBase = objectDataBase;
     }
 
-    public abstract GameObject Create(string key);
+    public abstract GameObject Create();
     
-    public abstract GameObject Create(string key, Vector2 position);
+    public abstract GameObject Create(Vector2 position);
     
-    public abstract GameObject Create(string key, Vector2 position, Transform parent);
+    public abstract GameObject Create(Vector2 position, Transform parent);
 
     public abstract void Dispose();
 }

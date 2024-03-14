@@ -58,6 +58,7 @@ public class AssetProvider : IService
         Addressables.Release(loaded);
         _loadedAssets.Remove(address);
     }
+    
     public void ReleaseAllAssets()
     {
         foreach (var loadedAsset in _loadedAssets)
