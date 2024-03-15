@@ -1,27 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WorldBuilder : MonoBehaviour, IService
 {
     private PlatformFactory _platformFactory;
     private ItemFactory _itemFactory;
     
+    [SerializeField]
+    [Range(0f,1f)]
+    private float itemSpawnChance;
+    
     public void Initialize(PlatformFactory platformFactory, ItemFactory itemFactory)
     {
         _platformFactory = platformFactory;
         _itemFactory = itemFactory;
     }
-
-    public GameObject CreatePlatform(Vector2 position, bool createItem)
+    
+    public GameObject CreatePlatformItemPair(Vector2 position)
     {
-        var platformItemPair = _platformFactory.Create(position, null);
-
-        if (!createItem) return platformItemPair;
-
-        var parent = platformItemPair.transform.childCount>0 ? platformItemPair.transform.Find("Platform") : platformItemPair.transform;
-        _itemFactory.Create(new Vector2(0, 0.5f), parent);
-        return platformItemPair;
+        var platform =  _platformFactory.Create(position, null);
+        if (Random.Range(0f, 1f) < itemSpawnChance)
+        {
+            var item = _itemFactory.Create(position, platform.transform.Find("Platform"));
+            item.transform.localPosition = new Vector3(0, 0.25f, 0);
+        }
+        return platform;
     }
 }

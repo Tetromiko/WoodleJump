@@ -17,14 +17,14 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: f35def67de241fd4aa94b11c68b845d1
   m_SerializeEntries:
-  - m_GUID: a6e385e6b79d8634caba7e85a38b4f3a
-    m_Address: WorldBuilder
+  - m_GUID: ca9d86a9d0a508641a64db07d589d133
+    m_Address: WorldManager
     m_ReadOnly: 0
     m_SerializedLabels:
     - service
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ca9d86a9d0a508641a64db07d589d133
-    m_Address: WorldManager
+  - m_GUID: fb9f8dbde25b6f543ab307962a922959
+    m_Address: WorldBuilder
     m_ReadOnly: 0
     m_SerializedLabels:
     - service

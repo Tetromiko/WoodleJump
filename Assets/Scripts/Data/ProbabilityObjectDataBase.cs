@@ -7,8 +7,8 @@ using UnityEngine.Serialization;
 public class ProbabilityObjectDataBase : ScriptableObject
 {
     [SerializeField] private AssetLabelReference label;
+    [SerializeField] private ProbabilityList probabilityObjectsData = new();
     
-    [SerializeField] private ProbabilityList probabilityObjects = new();
     private AssetProvider _assetProvider;
 
     public async Task Initialize(AssetProvider assetProvider)
@@ -16,19 +16,19 @@ public class ProbabilityObjectDataBase : ScriptableObject
         _assetProvider = assetProvider;
         var loadedAssets = await _assetProvider.LoadLabeledAssetsAsync<object>(label);
 
-        if (loadedAssets.Count != probabilityObjects.Count)
+        if (loadedAssets.Count != probabilityObjectsData.Count)
         {
-            probabilityObjects.Clear();
+            probabilityObjectsData.Clear();
         
             foreach (var probabilityObject in loadedAssets)
             {
-                probabilityObjects.Add((Object)probabilityObject);
+                probabilityObjectsData.Add((Object)probabilityObject);
             }
         }
     }
     
     public Object GetObject()
     {
-        return probabilityObjects.Get();;
+        return probabilityObjectsData.Get();;
     }
 }

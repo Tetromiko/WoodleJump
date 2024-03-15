@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
-  m_Name: Platforms_ContentUpdateGroupSchema
+  m_Script: {fileID: 11500000, guid: c1d669e8f2ee434e897e2a87b1dc7a52, type: 3}
+  m_Name: Illusory
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: 4949ca6ab98678d4a9f8357cc2ee46a5, type: 2}
-  m_StaticContent: 0
+  sprite: {fileID: -751550211, guid: ff04d7c6ec405f44cb9ce03974775036, type: 3}
+  animatorController: {fileID: 0}

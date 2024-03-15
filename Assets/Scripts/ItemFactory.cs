@@ -1,29 +1,28 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using Data;
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 public class ItemFactory : FactoryBase
 {
-    public ItemFactory(ProbabilityObjectDataBase objectDataBase) : base(objectDataBase)
+    public ItemFactory(ProbabilityObjectDataBase objectDataBase, AssetProvider assetProvider) : base(objectDataBase, assetProvider)
     {
         
     }
 
-    public override GameObject Create()
+    public override async Task Initialize()
     {
-        return Create(Vector2.zero);
+        ObjectBase = await AssetProvider.LoadAssetAsync<GameObject>("ItemHolder");
     }
-
-    public override GameObject Create(Vector2 position)
-    {
-        return Create(position, null);
-    }
-
+    
     public override GameObject Create(Vector2 position, Transform parent)
     {
-        var itemPrefab = (GameObject)ObjectDataBase.GetObject();
-        var item = Object.Instantiate(itemPrefab, parent);
-        item.transform.localPosition = position;
-        return item;
+        var objectBase = Object.Instantiate(ObjectBase, position, Quaternion.identity, parent);
+        var itemData = (ItemData)ObjectDataBase.GetObject();
+        var item = objectBase.transform.Find("Item");
+        item.GetComponent<SpriteRenderer>().sprite = itemData.sprite;
+        item.GetComponent<Animator>().runtimeAnimatorController = itemData.animatorController;
+        return objectBase;
     }
 
     public override void Dispose()

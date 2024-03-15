@@ -12,36 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Items
   m_EditorClassIdentifier: 
-  m_GroupName: Items
+  m_GroupName: Packed Assets
   m_Data:
     m_SerializedData: []
-  m_GUID: db95c5a5758099a449cf64a66b460893
+  m_GUID: 477e1dee535035f4a89493dc94b01104
   m_SerializeEntries:
-  - m_GUID: 5857bdcfecaf4fa4cbcbaabe41a5d6a9
-    m_Address: JumpingBoots
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6035ec6cff7a81442b7d1e68b9451420
-    m_Address: PerplexityPotion
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9722ef8ac588d3142b0acfc4f21de18a
-    m_Address: LimitedVisibilityPotion
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 264a7e52284c9a44a98c42ed0308d1ab
+  - m_GUID: bd33a1c0e84a7714cb826d2084ea6d6f
     m_Address: IronBoots
     m_ReadOnly: 0
     m_SerializedLabels:
     - item
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1507a93de2d611342a0c1691d3575fed
+  - m_GUID: 07ff6acb8cbdecd4b97206470036ac1f
+    m_Address: JumpingBoots
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53a3ce63a1340fa4d885cb414e4111bc
+    m_Address: LimitedVisibilityPotion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 478e75c24d0f3d4418689ff4acdcf3cc
+    m_Address: PerplexityPotion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - item
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0aa14334b1245f4a9d7ffa0229bf28c
     m_Address: Wings
     m_ReadOnly: 0
     m_SerializedLabels:
@@ -51,5 +51,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 5de1a8a8b893c6c4083626e093f7b3aa, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 9b3c2fcdfbdaeb643b99f2cd37f9e153, type: 2}
-    - {fileID: 11400000, guid: 8c4d3ae29da09b3498efb8a8e06eb5fc, type: 2}
+    - {fileID: 11400000, guid: 1aa877cad90cd284f8162f83407e5fb0, type: 2}
+    - {fileID: 11400000, guid: fd69cb9408ee63f4baa93590a9ec1798, type: 2}

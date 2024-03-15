@@ -1,29 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using Data;
+using UnityEditor.Animations;
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 public class PlatformFactory : FactoryBase
 {
-    public PlatformFactory(ProbabilityObjectDataBase objectDataBase) : base(objectDataBase)
+    public PlatformFactory(ProbabilityObjectDataBase objectDataBase, AssetProvider assetProvider) : base(objectDataBase, assetProvider)
     {
         
     }
-
-    public override GameObject Create()
+    
+    public override async Task Initialize()
     {
-        return Create(Vector2.zero);
-    }
-
-    public override GameObject Create(Vector2 position)
-    {
-        return Create(position, null);
+        ObjectBase = await AssetProvider.LoadAssetAsync<GameObject>("PlatformHolder");
     }
 
     public override GameObject Create(Vector2 position, Transform parent)
     {
-        var platformPrefab = (GameObject)ObjectDataBase.GetObject();
-        var platform = Object.Instantiate(platformPrefab, parent);
-        platform.transform.localPosition = position;
-        return platform;
+         var objectBase = Object.Instantiate(ObjectBase, position, Quaternion.identity, parent);
+         var platformData = (PlatformData)ObjectDataBase.GetObject();
+         var platform = objectBase.transform.Find("Platform");
+         platform.GetComponent<SpriteRenderer>().sprite = platformData.sprite;
+         platform.GetComponent<Animator>().runtimeAnimatorController = platformData.animatorController;
+         return objectBase;
     }
 
     public override void Dispose()
