@@ -12,41 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Items
   m_EditorClassIdentifier: 
-  m_GroupName: Packed Assets
+  m_GroupName: Items
   m_Data:
     m_SerializedData: []
   m_GUID: 477e1dee535035f4a89493dc94b01104
-  m_SerializeEntries:
-  - m_GUID: bd33a1c0e84a7714cb826d2084ea6d6f
-    m_Address: IronBoots
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 07ff6acb8cbdecd4b97206470036ac1f
-    m_Address: JumpingBoots
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 53a3ce63a1340fa4d885cb414e4111bc
-    m_Address: LimitedVisibilityPotion
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 478e75c24d0f3d4418689ff4acdcf3cc
-    m_Address: PerplexityPotion
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e0aa14334b1245f4a9d7ffa0229bf28c
-    m_Address: Wings
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5de1a8a8b893c6c4083626e093f7b3aa, type: 2}
   m_SchemaSet:

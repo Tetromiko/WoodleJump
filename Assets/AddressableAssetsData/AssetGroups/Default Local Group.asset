@@ -34,12 +34,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bd33a1c0e84a7714cb826d2084ea6d6f
-    m_Address: IronBoots
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - item
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 277b3f0186be7c1488e9ca966ef48e67
     m_Address: PlatformHolder
     m_ReadOnly: 0

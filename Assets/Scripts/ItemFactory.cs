@@ -21,7 +21,6 @@ public class ItemFactory : FactoryBase
         var itemData = (ItemData)ObjectDataBase.GetObject();
         var item = objectBase.transform.Find("Item");
         item.GetComponent<SpriteRenderer>().sprite = itemData.sprite;
-        item.GetComponent<Animator>().runtimeAnimatorController = itemData.animatorController;
         return objectBase;
     }
 

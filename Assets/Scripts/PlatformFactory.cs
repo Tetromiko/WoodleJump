@@ -22,7 +22,6 @@ public class PlatformFactory : FactoryBase
          var platformData = (PlatformData)ObjectDataBase.GetObject();
          var platform = objectBase.transform.Find("Platform");
          platform.GetComponent<SpriteRenderer>().sprite = platformData.sprite;
-         platform.GetComponent<Animator>().runtimeAnimatorController = platformData.animatorController;
          return objectBase;
     }
 

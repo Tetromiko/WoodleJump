@@ -4,9 +4,7 @@ using UnityEngine;
 namespace Data
 {
     [CreateAssetMenu(fileName = "PlatformData", menuName = "Data/PlatformData")]
-    public class PlatformData : ScriptableObject
+    public class PlatformData : ObjectData
     {
-        public Sprite sprite;
-        public AnimatorController animatorController;
     }
 }
