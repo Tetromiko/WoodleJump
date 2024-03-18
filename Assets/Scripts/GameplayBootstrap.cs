@@ -16,14 +16,14 @@ public class GameplayBootstrap : Bootstrap
         
         var assetProvider = ServiceLocator.Get<AssetProvider>();
         
-        var itemDataBase = await assetProvider.LoadAssetAsync<ProbabilityObjectDataBase>("ItemDataBase");
+        var itemDataBase = await assetProvider.LoadAssetAsync<ProbabilityObjectDatabase>("ItemDataBase");
         await itemDataBase.Initialize(assetProvider);
         
         var itemFactory = new ItemFactory(itemDataBase, assetProvider);
         await itemFactory.Initialize();
         ServiceLocator.Register(itemFactory);
         
-        var platformDataBase = await assetProvider.LoadAssetAsync<ProbabilityObjectDataBase>("PlatformDataBase");
+        var platformDataBase = await assetProvider.LoadAssetAsync<ProbabilityObjectDatabase>("PlatformDataBase");
         await platformDataBase.Initialize(assetProvider);
         
         var platformFactory = new PlatformFactory(platformDataBase, assetProvider);

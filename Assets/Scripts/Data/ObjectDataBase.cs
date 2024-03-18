@@ -1,31 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.Serialization;
 using Object = UnityEngine.Object;
 
-[CreateAssetMenu(fileName = "ObjectDataBase", menuName = "DataBases/ObjectDataBase", order = 1)]
-public class ObjectDataBase : ScriptableObject
-{
-    [SerializeField] protected AssetLabelReference label;
-    
-    private readonly Dictionary<string, Object> _objects = new();
-    protected AssetProvider AssetProvider;
-
-    public virtual async Task Initialize(AssetProvider assetProvider)
+namespace Data
+{ 
+    [CreateAssetMenu(fileName = "ObjectDataBase", menuName = "DataBases/ObjectDataBase", order = 1)]
+    public sealed class ObjectDatabase : ScriptableObject
     {
-        AssetProvider = assetProvider;
-        var loadedAssets = await AssetProvider.LoadLabeledAssetsAsync<object>(label);
-        
-        foreach (var loadedAsset in loadedAssets)
+        [SerializeField] private List<ObjectData> objects = new();
+        public Object GetObject(int index)
         {
-            var loadedAssetObject = (Object)loadedAsset;
-            _objects.Add(loadedAssetObject.name, loadedAssetObject);
+            return objects[index];
         }
-    }
 
-    public Object GetObject(string key)
-    {
-        return _objects.GetValueOrDefault(key);
+        public void SetData(List<ObjectData> data)
+        {
+            objects = data;
+        }
     }
 }

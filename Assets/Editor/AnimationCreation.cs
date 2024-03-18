@@ -49,7 +49,7 @@ namespace Editor
             var button = GUILayout.Button("Create");
             if (button)
             {
-                var localPath = _path + _objectData.name + "/";
+                var localPath = _path + _objectData.GetType().Name.Replace("Data","s") + "/" + _objectData.name + "/";
                 if (!Directory.Exists(localPath))
                 {
                     Directory.CreateDirectory(localPath);

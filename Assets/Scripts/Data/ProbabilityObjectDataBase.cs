@@ -4,7 +4,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "ProbabilityObjectDataBase", menuName = "DataBases/ProbabilityObjectDataBase", order = 0)]
-public class ProbabilityObjectDataBase : ScriptableObject
+public class ProbabilityObjectDatabase : ScriptableObject
 {
     [SerializeField] private AssetLabelReference label;
     [SerializeField] private ProbabilityList probabilityObjectsData = new();

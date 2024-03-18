@@ -4,14 +4,14 @@ using UnityEngine;
 
 public abstract class FactoryBase : IService, IDisposable
 {
-    protected readonly ProbabilityObjectDataBase ObjectDataBase;
+    protected readonly ProbabilityObjectDatabase ObjectDatabase;
     protected readonly AssetProvider AssetProvider;
 
     protected GameObject ObjectBase;
     
-    protected FactoryBase(ProbabilityObjectDataBase objectDataBase, AssetProvider assetProvider)
+    protected FactoryBase(ProbabilityObjectDatabase objectDatabase, AssetProvider assetProvider)
     {
-        ObjectDataBase = objectDataBase;
+        ObjectDatabase = objectDatabase;
         AssetProvider = assetProvider;
     }
 
