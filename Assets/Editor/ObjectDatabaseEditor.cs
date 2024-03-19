@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using Data;
 using UnityEditor;
 using UnityEngine;
@@ -8,35 +10,40 @@ namespace Editor
     [CustomEditor(typeof(ObjectDatabase))]
     public class ObjectDatabaseEditor : UnityEditor.Editor
     {
-        private string _path = "";
+        private ObjectDatabase _objectDatabase;
 
-        public override void OnInspectorGUI()
+        public override async void OnInspectorGUI()
         {
-            ObjectDatabase objectDatabase = (ObjectDatabase)target;
+            _objectDatabase = (ObjectDatabase)target;
 
             DrawDefaultInspector();
-
-            EditorGUILayout.Space();
-            GUILayout.Label("Get data from folder", EditorStyles.centeredGreyMiniLabel);
-            EditorGUILayout.BeginHorizontal();
-            GUILayout.Label("Path :");
-            GUILayout.Label(_path, GUI.skin.box);
-            var browse = GUILayout.Button("Browse");
-            if (browse)
-            {
-                _path = EditorUtility.OpenFolderPanel("Select folder", "", "");
-                _path = "Assets" + _path.Substring(Application.dataPath.Length);
-            }
-            EditorGUILayout.EndHorizontal();
-            var getData = GUILayout.Button("Get data");
+            
+            var getData = GUILayout.Button("Get data from folder");
             if (getData)
             {
-                var objectData = AssetDatabase.FindAssets("t:ObjectData", new[] { _path })
-                    .Select(AssetDatabase.GUIDToAssetPath)
-                    .Select(AssetDatabase.LoadAssetAtPath<ObjectData>)
-                    .ToList();
-                objectDatabase.SetData(objectData);
+                var selectedFolder = EditorUtility.OpenFolderPanel("Select Folder", "Assets", "");
+                var relativePath = selectedFolder.Replace(Application.dataPath, "Assets");
+                if (!string.IsNullOrEmpty(relativePath))
+                {
+                    await AddFilesFromFolderAsync(relativePath);
+                }
             }
+        }
+        private async Task AddFilesFromFolderAsync(string folderPath)
+        {
+            _objectDatabase.Clear();
+
+            string[] files = Directory.GetFiles(folderPath);
+            foreach (var file in files)
+            {
+                var objectData = AssetDatabase.LoadAssetAtPath<ObjectData>(file);
+                if (objectData == null) continue;
+                await _objectDatabase.AddDataAsync(objectData);
+            }
+
+            Repaint();
+            EditorUtility.SetDirty(target);
+            AssetDatabase.SaveAssets();
         }
     }
 

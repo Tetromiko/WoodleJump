@@ -20,14 +20,12 @@ MonoBehaviour:
   - m_GUID: 6e85947cb4407e243bb65d632e09921f
     m_Address: BootstrapScene
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - scene
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dced5584f0f7c2843863850a67c9b729
     m_Address: GameplayScene
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - scene
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4a220a42c3a181e4cb63028c59623611
     m_Address: Player
@@ -41,6 +39,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 96a68cba9bb7ead42a1ad0eb8342a9f6
     m_Address: ItemHolder
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: faa97854d32dd7144b1b4f0d42461bb5
+    m_Address: DeadZone
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c56e5d0b41ef9d941808feef51888569
+    m_Address: Ground
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

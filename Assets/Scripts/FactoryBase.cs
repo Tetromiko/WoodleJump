@@ -1,15 +1,16 @@
 using System;
 using System.Threading.Tasks;
+using Data;
 using UnityEngine;
 
 public abstract class FactoryBase : IService, IDisposable
 {
-    protected readonly ProbabilityObjectDatabase ObjectDatabase;
+    protected readonly ObjectDatabase ObjectDatabase;
     protected readonly AssetProvider AssetProvider;
 
     protected GameObject ObjectBase;
     
-    protected FactoryBase(ProbabilityObjectDatabase objectDatabase, AssetProvider assetProvider)
+    protected FactoryBase(ObjectDatabase objectDatabase, AssetProvider assetProvider)
     {
         ObjectDatabase = objectDatabase;
         AssetProvider = assetProvider;

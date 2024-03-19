@@ -20,14 +20,12 @@ MonoBehaviour:
   - m_GUID: ca9d86a9d0a508641a64db07d589d133
     m_Address: WorldManager
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - service
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb9f8dbde25b6f543ab307962a922959
     m_Address: WorldBuilder
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - service
+    m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5de1a8a8b893c6c4083626e093f7b3aa, type: 2}

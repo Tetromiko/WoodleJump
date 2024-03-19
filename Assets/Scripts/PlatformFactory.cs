@@ -6,7 +6,7 @@ using Object = UnityEngine.Object;
 
 public class PlatformFactory : FactoryBase
 {
-    public PlatformFactory(ProbabilityObjectDatabase objectDatabase, AssetProvider assetProvider) : base(objectDatabase, assetProvider)
+    public PlatformFactory(ObjectDatabase objectDatabase, AssetProvider assetProvider) : base(objectDatabase, assetProvider)
     {
         
     }
@@ -19,7 +19,7 @@ public class PlatformFactory : FactoryBase
     public override GameObject Create(Vector2 position, Transform parent)
     {
          var objectBase = Object.Instantiate(ObjectBase, position, Quaternion.identity, parent);
-         var platformData = (PlatformData)ObjectDatabase.GetObject();
+         var platformData = (PlatformData)ObjectDatabase.GetRandomObjectBasedOnChance();
          var platform = objectBase.transform.Find("Platform");
          platform.GetComponent<SpriteRenderer>().sprite = platformData.sprite;
          return objectBase;

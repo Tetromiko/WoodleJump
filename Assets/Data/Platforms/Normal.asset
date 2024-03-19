@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71197b20f55f4180a53b490ab53e6ed8, type: 3}
-  m_Name: PlatformDatabase
+  m_Script: {fileID: 11500000, guid: c1d669e8f2ee434e897e2a87b1dc7a52, type: 3}
+  m_Name: Normal
   m_EditorClassIdentifier: 
-  objects: []
+  sprite: {fileID: 605220078, guid: ff04d7c6ec405f44cb9ce03974775036, type: 3}
+  spawnChance: 5

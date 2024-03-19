@@ -21,7 +21,7 @@ public class WorldBuilder : MonoBehaviour, IService
         if (Random.Range(0f, 1f) < itemSpawnChance)
         {
             var item = _itemFactory.Create(position, platform.transform.Find("Platform"));
-            item.transform.localPosition = new Vector3(0, 0.25f, 0);
+            item.transform.localPosition = new Vector3(0, 0.4f, 0);
         }
         return platform;
     }
